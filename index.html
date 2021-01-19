@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Title -->
+    <h1 class="title">Chit-Chat</h1>
+
+    <!-- Buttons for chatrooms -->
+    <nav class="buttons">
+        <button class="button" id="general">#general</button>
+        <button class="button" id="music">#music</button>
+        <button class="button" id="gaming">#gaming</button>
+        <button class="button" id="movies">#movies</button>
+    </nav>
+
+    <!-- Chat window -->
+    <ul class="window">
+        <!-- <li class="message">
+            <div class="name">Yash</div>
+            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, deleniti quo nihil veniam commodi repellat consectetur. Saepe nam repellendus similique fugit laudantium, velit nobis eaque optio. Optio maxime odio esse. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="time">Less than a minute ago</div>
+        </li>
+        <li class="message you">
+            <div class="name">Himani</div>
+            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+            <div class="time">Less than a minute ago</div>
+        </li> -->
+    </ul>
+
+    <!-- New message form -->
+    <form class="send-message" autocomplete="off">
+        <label for="message">
+            <div class="description">Your message: </div>
+            <input type="text" name="message" id="message">
+        </label>
+        <button class="send">Send</button>
+    </form>
+
+    <!-- Update name form -->
+    <form class="update-name" autocomplete="off">
+        <label for="name">
+            <div class="description">Update name: </div>
+            <input type="text" name="name" id="name">
+        </label>
+        <button class="update">Update</button>
+    </form>
+    
+
+    <!-- uuid Library to generate unique ids -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <!-- Date-fns Library -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAMS8l8oXBtm_XDwJcAX9VPog512Avtb6k",
+        authDomain: "learn-modern-javascript-b36d8.firebaseapp.com",
+        projectId: "learn-modern-javascript-b36d8",
+        storageBucket: "learn-modern-javascript-b36d8.appspot.com",
+        messagingSenderId: "265270014920",
+        appId: "1:265270014920:web:e1c3135540077e171146fd",
+        measurementId: "G-GS6JH1DQL3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
+
+    <!-- Our own JavaScript file -->
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
