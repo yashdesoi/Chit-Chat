@@ -1,4 +1,3 @@
-const chatWindow = document.querySelector('.window');
 const sendMessageForm = document.querySelector('.send-message');
 const updateNameForm = document.querySelector('.update-name');
 const rooms = document.querySelector('.buttons');
@@ -15,19 +14,6 @@ sendMessageForm.addEventListener('submit', event => {
     const text = sendMessageForm.message.value.trim();
 
     chatroom.addMessage(text, user.name, user.id);
-
-    // Whenever a new message is added, we need to scroll to the very bottom of the chat window, if we added the query outside of the setTimeout then scroll height is calculated of the window before the addition of new message because page rendering occurs after return of eventListner. Hence we put it insid esetTimeout so that when chatroom.addMessage is return we are going to set yet another macrotask of setTimeout so when 100ms is completed then scrollHeight will be calculated which will include height of the added message.
-    setTimeout(() => {
-
-        // // For quick scroll
-        // chatWindow.scrollTop = chatWindow.scrollHeight;
-
-        chatWindow.scrollTo({
-            top: chatWindow.scrollHeight,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }, 100);
 
     sendMessageForm.reset();
 });
