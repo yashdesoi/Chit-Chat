@@ -52,6 +52,8 @@
     overflow-y: scroll;
     padding: 0;
     background-image: linear-gradient(to top right, red, blue);
+    background-size: cover;
+    background-position: center;
 }
 
 .message {
@@ -95,57 +97,103 @@
     text-align: left;
 }
 
-/* Forms */
-form {
-    width: 600px;
-    margin: 20px auto;
-    border: 1px solid black;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-form * {
-    display: inline-block;
-    height: 30px;
-    vertical-align: middle;
-}
-
-.description {
-    background-color: lawngreen;
-    font-size: 1.2rem;
+/* Send message forms */
+.send-message {
     width: max-content;
-    margin-right: -4.17px;
-    padding: 0 5px;
-    border-right: 1px solid black;
+    margin: auto;
 }
 
-form input {
-    font-family: inherit;
-    font-size: 1rem;
-    margin-right: -4.17px;
-    border: none;
-    outline: none;
+.send-message > * {
+    display: inline-block;
+}
+
+.field-title {
+    font-weight: bold;
+    vertical-align: top;
+    margin-top: 3px;
 }
 
 #message {
-    width: calc(598px - 143.24px - 57.51px);
+    width: 500px;
+    height: 30px;
+    padding: 3px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+    resize: none;
+    vertical-align: middle;
+}
+
+#message:focus {
+    outline: none;
+}
+
+.send {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    vertical-align: bottom;
+    margin-bottom: 3px;
+}
+
+.send > i {
+    font-size: 20px;
+}
+
+.send > i:hover {
+    color: lawngreen;
+}
+
+.send:focus {
+    outline: none;
+}
+
+/* Update name form */
+.update-name {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.display-name {
+    width: max-content;
+    margin: 0 0 0 auto;
+}
+
+.display-name > * {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.display-name > span {
+    font-size: 20px;
+    color: rgb(119, 218, 20);
+}
+
+.display-name > i {
+    cursor: pointer;
+    color: royalblue;
 }
 
 #name {
-    width: calc(598px - 139.04px - 78.08px);
-}
-
-form button {
+    width: 190px;
+    padding: 3px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    color: black;
+    font-size: 15px;
     font-family: inherit;
-    font-size: 1.2rem;
-    border: none;
-    border-left: 1px solid black;
-    outline: none;
-    width: max-content;
-    padding: 0 5px;
-    cursor: pointer;
+
+    position: absolute;
+    right: -195px;
+    /* right: 0; */
+
+    transition: all 250ms linear;
 }
 
-form button:hover {
-    background-color: rgb(210, 210, 210);
+#name:focus {
+    outline: none;
 }

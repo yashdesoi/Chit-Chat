@@ -1,6 +1,6 @@
 class ChatUI {
     constructor() {
-        this.window = document.querySelector('.window');
+        this.window = chatWindow;
     }
 
     render(data) {
@@ -12,7 +12,7 @@ class ChatUI {
         if (data.id === user.id) {
             html = `
                 <li class="message you">
-                    <div class="name">${user.name}</div>
+                    <div class="name">You</div>
                     <div class="text">${data.text}</div>
                     <div class="time">${time}</div>
                 </li>
@@ -45,5 +45,13 @@ class ChatUI {
 
     clear() {
         this.window.innerHTML = '';
+    }
+
+    changeWindowBackground(roomname) {
+        if (roomname === 'general') {
+            this.window.style.backgroundImage = 'linear-gradient(to top right, red, blue)';
+        } else {
+            this.window.style.backgroundImage = `url('images/${roomname}.jfif')`;
+        }
     }
 }

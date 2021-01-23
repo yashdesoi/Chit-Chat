@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -37,20 +38,15 @@
 
     <!-- New message form -->
     <form class="send-message" autocomplete="off">
-        <label for="message">
-            <div class="description">Your message: </div>
-            <input type="text" name="message" id="message">
-        </label>
-        <button class="send">Send</button>
+        <div class="field-title">Your message:</div>
+        <textarea rows='10' cols='50' id="message" name="message" required></textarea>
+        <button class="send"><i class="fas fa-paper-plane"></i></button>
     </form>
 
     <!-- Update name form -->
-    <form class="update-name" autocomplete="off">
-        <label for="name">
-            <div class="description">Update name: </div>
-            <input type="text" name="name" id="name">
-        </label>
-        <button class="update">Update</button>
+    <form class="update-name" name="updateName" autocomplete="off">
+        <div class="display-name"><span></span><i class="fas fa-user-edit"></i></div>
+        <input type="text" name="name" id="name" required placeholder="Update name">
     </form>
     
 

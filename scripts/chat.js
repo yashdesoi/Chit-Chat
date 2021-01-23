@@ -41,7 +41,7 @@ class Chatroom {
         // We are unsubscribing from previous RT listner because if we don't and change the room, though different room is not going to share messages from previous room, but if we again change to previous room then this room is conna have 2 RT listners listning to DB. So if we post message to that room, that message is gonna appear twice xD
         this.unsubscribe();
         this.name = roomname;
-        console.log('Room updated!');
+        chatUI.changeWindowBackground(roomname);
     }
 }
 
