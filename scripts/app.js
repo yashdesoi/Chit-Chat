@@ -13,42 +13,55 @@ const user = new User();
 displayName.textContent = localStorage.getItem('chitChatUsername');
 chatroom.retrieveMessages(chatUI.render.bind(chatUI));
 
+
 // Sending messages
 let text = '';
+const nil = /^[\n\r\s]{1,}$/;
+
+const replaceNewlineCharacter = function(str) {
+    // str = str.replace(/(\r\n|\n|\r)/gm, "<br>");
+    // return str
+
+    let text = '';
+    for (let char of str.split('')) {
+        if (char === '\n' || char === '\r') {
+            text += '<br>';
+        } else {
+            text += char;
+        }
+    }
+    return text
+};
+
 sendMessageForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    if (text.length === 0) {
-        const text = sendMessageForm.message.value;
-        chatroom.addMessage(text.trim(), user.name, user.id);
+    let text = sendMessageForm.message.value;
+
+    if (nil.test(text)) {
+        // Don't send blank message
     } else {
+        text = replaceNewlineCharacter(text);
         chatroom.addMessage(text.trim(), user.name, user.id);
     }
-
-    text = '';
     sendMessageForm.reset();
 });
 
 // "Shift + Enter" --> New line, "Enter" --> Submit
 sendMessageForm.addEventListener('keypress', event => {
+    let text = sendMessageForm.message.value;
 
-    // New line
     if (event.keyCode === 13 && event.shiftKey) {
-        text += '<br>';
-
-    // Submit
+    // Do default action which is go to newline
     } else if (event.keyCode === 13) {
-        if (text.length === 0) {
-            const text = sendMessageForm.message.value;
-            chatroom.addMessage(text.trim(), user.name, user.id);
+        // Submit
+        if (nil.test(text)) {
+            // Don't send blank message
         } else {
+            text = replaceNewlineCharacter(text);
             chatroom.addMessage(text.trim(), user.name, user.id);
-        }
-        text = '';
+        }       
         sendMessageForm.reset();
-        
-    } else {
-        text += event.key;
     }
 });
 
@@ -61,6 +74,7 @@ sendMessageForm.addEventListener('keyup', event => {
         left: 0,
     });
 });
+
 
 // Updating name
 let clicks = 0;
@@ -87,6 +101,7 @@ updateNameForm.addEventListener('submit', event => {
     clicks += 1;
     updateNameForm.reset();
 });
+
 
 // Changing room
 rooms.addEventListener('click', event => {
