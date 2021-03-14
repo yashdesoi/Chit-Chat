@@ -7,46 +7,58 @@
     box-sizing: border-box;
 }
 
+body {
+    position: relative;
+}
+
 /* Title */
 .title {
     text-align: center;
+    margin: 25px 0;
 }
 
 
 /* Buttons for chatroom */
 .buttons {
-    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 388px) {
+    .buttons {
+        height: 100px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .button {
     font-family: inherit;
-    font-size: 1.3rem;
-    margin-right: 20px;
+    font-size: 1.1rem;
     cursor: pointer;
-}
-
-.button {
-    width: 110px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
+    margin: 4px;
     background-color: white;
     color: black;
     cursor: pointer;
-    font-size: 19px;
-    font-family: inherit;
-    border: 3px solid black;
-    border-bottom: 6px solid black;
-    border-radius: 3px;
+    border: 2px solid black;
+    border-bottom: 4px solid black;
+    border-radius: 4px;
 }
 
 .button:first-of-type {
-    border-bottom-width: 4px;
+    border-bottom-width: 3px;
 }
 
 /* Chat window */
 .window {
     list-style: none;
-    width: 80%;
-    min-width: 700px;
+    width: 100%;
+    max-width: 800px;
     height: 450px;
     margin: 10px auto;
     overflow-y: scroll;
@@ -99,8 +111,12 @@
 
 /* Send message forms */
 .send-message {
-    width: max-content;
+    width: 100%;
+    max-width: max-content;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .send-message > * {
@@ -109,11 +125,11 @@
 
 .field-title {
     font-weight: bold;
-    vertical-align: top;
-    margin-top: 3px;
+    margin-right: 5px;
 }
 
 #message {
+    min-width: 0;
     width: 500px;
     height: 30px;
     padding: 3px;
@@ -123,7 +139,6 @@
     font-size: 15px;
     font-family: inherit;
     resize: none;
-    vertical-align: middle;
 }
 
 #message:focus {
@@ -134,8 +149,8 @@
     background-color: inherit;
     border: none;
     cursor: pointer;
-    vertical-align: bottom;
-    margin-bottom: 3px;
+    align-self: flex-end;
+    margin-left: 5px;
 }
 
 .send > i {
@@ -152,23 +167,17 @@
 
 /* Update name form */
 .update-name {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .display-name {
     width: max-content;
-    margin: 0 0 0 auto;
-}
-
-.display-name > * {
-    display: inline-block;
-    margin-left: 5px;
-    vertical-align: middle;
 }
 
 .display-name > span {
+    margin-right: 3px;
     font-size: 20px;
     color: rgb(119, 218, 20);
 }
@@ -187,9 +196,9 @@
     font-size: 15px;
     font-family: inherit;
 
-    position: absolute;
-    right: -195px;
-    /* right: 0; */
+    position: fixed;
+    right: -198px;
+    top: 32px;
 
     transition: all 250ms linear;
 }

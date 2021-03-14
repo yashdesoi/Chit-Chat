@@ -82,10 +82,10 @@ let clicks = 0;
 // Toggling input field
 updateNameButton.addEventListener('click', event => {
     if (clicks%2 === 0) {
-        updateNameField.style.right = '0px';
+        updateNameField.style.right = '8px';
         clicks += 1;
     } else {
-        updateNameField.style.right = '-195px';
+        updateNameField.style.right = '-198px';
         clicks += 1;
     }
 });
@@ -97,7 +97,7 @@ updateNameForm.addEventListener('submit', event => {
 
     user.changeName(name);
     displayName.textContent = name;
-    updateNameField.style.right = '-195px';
+    updateNameField.style.right = '-198px';
     clicks += 1;
     updateNameForm.reset();
 });
@@ -113,8 +113,8 @@ rooms.addEventListener('click', event => {
         if (roomname === chatroom.name) {
 
         } else {
-            array.forEach(element => element.style.borderBottomWidth = '6px');
-            event.target.style.borderBottomWidth = '4px';
+            array.forEach(element => element.style.borderBottomWidth = '4px');
+            event.target.style.borderBottomWidth = '3px';
 
             // Clearing window, changing room and setting up new real-time listner.
             chatUI.clear();

@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!-- Update name form -->
+    <form class="update-name" name="updateName" autocomplete="off">
+        <div class="display-name"><span></span><i class="fas fa-user-edit"></i></div>
+        <input type="text" name="name" id="name" required placeholder="Update name">
+    </form>
+
     <!-- Title -->
     <h1 class="title">Chit-Chat</h1>
 
@@ -41,12 +47,6 @@
         <div class="field-title">Your message:</div>
         <textarea rows='10' cols='50' id="message" name="message" required></textarea>
         <button class="send"><i class="fas fa-paper-plane"></i></button>
-    </form>
-
-    <!-- Update name form -->
-    <form class="update-name" name="updateName" autocomplete="off">
-        <div class="display-name"><span></span><i class="fas fa-user-edit"></i></div>
-        <input type="text" name="name" id="name" required placeholder="Update name">
     </form>
     
 
