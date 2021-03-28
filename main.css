@@ -14,11 +14,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
 }
 
 /* Title */
 .title {
-    margin: 25px 0;
+    margin: 0;
 }
 
 /* Update name form */
