@@ -11,43 +11,50 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Update name form -->
-    <form class="update-name" name="updateName" autocomplete="off">
-        <div class="display-name"><span></span><i class="fas fa-user-edit"></i></div>
-        <input type="text" name="name" id="name" required placeholder="Update name">
-    </form>
+    <header>
+        <!-- Title -->
+        <h1 class="title">Chit-Chat</h1>
 
-    <!-- Title -->
-    <h1 class="title">Chit-Chat</h1>
+        <!-- Update name form -->
+        <form class="update-name" name="updateName" autocomplete="off">
+            <div class="display-name"><span></span><i class="fas fa-user-edit"></i></div>
+            <input type="text" name="name" id="name" required placeholder="Update name">
+        </form>
+    </header>
+    
 
-    <!-- Buttons for chatrooms -->
-    <nav class="buttons">
-        <button class="button" id="general">#general</button>
-        <button class="button" id="music">#music</button>
-        <button class="button" id="gaming">#gaming</button>
-        <button class="button" id="movies">#movies</button>
-    </nav>
+    <main>
+        <!-- Buttons for chatrooms -->
+        <nav class="buttons">
+            <button class="button" id="general">#general</button>
+            <button class="button" id="music">#music</button>
+            <button class="button" id="gaming">#gaming</button>
+            <button class="button" id="movies">#movies</button>
+        </nav>
 
-    <!-- Chat window -->
-    <ul class="window">
-        <!-- <li class="message">
-            <div class="name">Yash</div>
-            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, deleniti quo nihil veniam commodi repellat consectetur. Saepe nam repellendus similique fugit laudantium, velit nobis eaque optio. Optio maxime odio esse. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-            <div class="time">Less than a minute ago</div>
-        </li>
-        <li class="message you">
-            <div class="name">Himani</div>
-            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
-            <div class="time">Less than a minute ago</div>
-        </li> -->
-    </ul>
+        <!-- Chat window -->
+        <ul class="window">
+            <!-- <li class="message">
+                <div class="name">Yash</div>
+                <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, deleniti quo nihil veniam commodi repellat consectetur. Saepe nam repellendus similique fugit laudantium, velit nobis eaque optio. Optio maxime odio esse. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <div class="time">Less than a minute ago</div>
+            </li>
+            <li class="message you">
+                <div class="name">Himani</div>
+                <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+                <div class="time">Less than a minute ago</div>
+            </li> -->
+        </ul>
+    </main>
 
-    <!-- New message form -->
-    <form class="send-message" autocomplete="off">
-        <div class="field-title">Your message:</div>
-        <textarea rows='10' cols='50' id="message" name="message" required></textarea>
-        <button class="send"><i class="fas fa-paper-plane"></i></button>
-    </form>
+    <footer>
+        <!-- New message form -->
+        <form class="send-message" autocomplete="off">
+            <div class="field-title">Your message:</div>
+            <textarea rows='10' cols='50' id="message" name="message" required></textarea>
+            <button class="send"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </footer>
     
 
     <!-- uuid Library to generate unique ids -->

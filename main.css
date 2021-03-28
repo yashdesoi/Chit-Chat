@@ -1,5 +1,4 @@
 :root {
-    /* font-family: 'EB Garamond', serif; */
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -11,10 +10,51 @@ body {
     position: relative;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Title */
 .title {
-    text-align: center;
     margin: 25px 0;
+}
+
+/* Update name form */
+.display-name {
+    width: max-content;
+}
+
+.display-name > span {
+    margin-right: 3px;
+    font-size: 20px;
+    color: rgb(119, 218, 20);
+}
+
+.display-name > i {
+    cursor: pointer;
+    color: royalblue;
+}
+
+#name {
+    width: 190px;
+    padding: 3px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+
+    position: fixed;
+    right: -198px;
+    top: 65px;
+
+    transition: all 250ms linear;
+}
+
+#name:focus {
+    outline: none;
 }
 
 
@@ -87,6 +127,7 @@ body {
 
 .text {
     font-size: 1.1rem;
+    overflow-wrap: break-word;
 }
 
 .time {
@@ -162,47 +203,5 @@ body {
 }
 
 .send:focus {
-    outline: none;
-}
-
-/* Update name form */
-.update-name {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.display-name {
-    width: max-content;
-}
-
-.display-name > span {
-    margin-right: 3px;
-    font-size: 20px;
-    color: rgb(119, 218, 20);
-}
-
-.display-name > i {
-    cursor: pointer;
-    color: royalblue;
-}
-
-#name {
-    width: 190px;
-    padding: 3px;
-    border: 2px solid gray;
-    border-radius: 4px;
-    color: black;
-    font-size: 15px;
-    font-family: inherit;
-
-    position: fixed;
-    right: -198px;
-    top: 32px;
-
-    transition: all 250ms linear;
-}
-
-#name:focus {
     outline: none;
 }
